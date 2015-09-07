@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "csv.h"
 using namespace std;
+
 struct counts {
 	long unsigned fields;
 	long unsigned rows;
@@ -23,7 +24,7 @@ int main (int argc, char *argv[]) {
 	size_t bytes_read;
 	struct counts c = {0, 0};
 	if (csv_init(&p, 0) != 0) exit(EXIT_FAILURE);
-	fp = fopen("datos_csv/test_01.csv", "rb");
+	fp = fopen("datos_csv/test.csv", "rb");
 	if (!fp) exit(EXIT_FAILURE);
 	while ((bytes_read=fread(buf, 1, 1024, fp)) > 0)
 	if (csv_parse(&p, buf, bytes_read, cb1, cb2, &c) != bytes_read) {

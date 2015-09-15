@@ -20,6 +20,7 @@ int main (int argc, char *argv[]) {
 	FILE *fp;
 	struct csv_parser p;
 	cout << "hola\n";
+	cout << "pruebo";
 	char buf[1024];
 	size_t bytes_read;
 	struct counts c = {0, 0};
